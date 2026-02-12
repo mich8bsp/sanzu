@@ -50,6 +50,8 @@ fn resolve_on_land(state: &GameState, pos: GridPos) -> Option<Action> {
         if let Some(entity) = state.follower {
             if state.boat_cargo.is_none() {
                 return Some(Action::LoadOntoBoat(entity));
+            } else {
+                return None;
             }
         }
         return Some(Action::BoardBoat);

@@ -90,7 +90,7 @@ pub const CABBAGE_START: GridPos = GridPos::new(1, 6);
 
 /// Tile dimensions in world units (the virtual coordinate space).
 pub const TILE_WIDTH: f32 = 64.0;
-pub const TILE_HEIGHT: f32 = 32.0;
+pub const TILE_HEIGHT: f32 = 22.0;
 
 /// The virtual world dimensions that the camera maps to screen.
 pub const WORLD_HEIGHT: f32 = 500.0;
@@ -141,10 +141,10 @@ pub fn dock_for(bank: Bank) -> GridPos {
 pub fn grid_to_iso(pos: GridPos) -> (f32, f32) {
     // Center the grid horizontally in the world.
     // Total iso width = (GRID_COLS + GRID_ROWS) * TILE_WIDTH / 2 = 20 * 32 = 640
-    // Total iso height = (GRID_COLS + GRID_ROWS) * TILE_HEIGHT / 2 = 20 * 16 = 320
+    // Total iso height = (GRID_COLS + GRID_ROWS) * TILE_HEIGHT / 2 = 20 * 11 = 220
     // We want this centered with padding for sprites above tiles and HUD below.
     let x_origin = 440.0; // roughly center for 16:9 aspect
-    let y_origin = 60.0;
+    let y_origin = 100.0;
 
     let iso_x = x_origin + (pos.col as f32 - pos.row as f32) * (TILE_WIDTH / 2.0);
     let iso_y = y_origin + (pos.col as f32 + pos.row as f32) * (TILE_HEIGHT / 2.0);
